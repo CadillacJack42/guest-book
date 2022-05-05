@@ -1,6 +1,6 @@
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import { ProvideAuth } from './context/ProvideAuth';
-import Login from './views/Login';
+import { Login } from './views/Login';
 
 export default function App() {
   return (

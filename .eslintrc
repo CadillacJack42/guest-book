@@ -6,7 +6,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "globals": {
     "process": true
   },
