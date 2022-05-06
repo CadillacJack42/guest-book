@@ -16,7 +16,7 @@ export const Login = () => {
   const handleSignIn = async (e) => {
     try {
       e.preventDefault();
-      const user = await auth.login(email, password);
+      await auth.login(email, password);
       history.replace(from);
     } catch (error) {
       setError(error);
@@ -35,6 +35,7 @@ export const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
         ></input>
         <input
+          type="password"
           id="password"
           name="password"
           value={password}

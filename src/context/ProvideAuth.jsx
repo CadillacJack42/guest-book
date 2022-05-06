@@ -10,11 +10,11 @@ export function ProvideAuth({ children }) {
   const login = async (email, password) => {
     try {
       await signup(email, password);
-      const currentUser = await signin(email, password);
-      setUser(currentUser);
     } catch (error) {
       console.error(error);
     }
+    const currentUser = await signin(email, password);
+    setUser(currentUser);
   };
 
   const logOut = async () => {
