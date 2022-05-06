@@ -10,7 +10,7 @@ export default function App() {
       <ProvideAuth>
         <Router>
           <Switch>
-            <Route exact path="/auth">
+            <Route exact path="/login">
               <Login />
             </Route>
             <AuthRoute exact path="/">

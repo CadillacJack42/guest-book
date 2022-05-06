@@ -9,8 +9,8 @@ export const GuestBook = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(newEntry, auth.user.id);
-    insertEntry(auth.user.id, newEntry);
+    await insertEntry(auth.user.id, newEntry);
+    await getEntries().then(setEntries);
   };
 
   const handleChange = (e) => {
@@ -27,7 +27,7 @@ export const GuestBook = () => {
 
   return (
     <>
-      <h3>Welcome To Cadillac Jacks Guest Book</h3>
+      <h3>Welcome {auth.user.email}</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="comment">Add Entry</label>
         <input
