@@ -2,7 +2,7 @@ import { Redirect } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
-export const AuthRoute = ({ children, ...rest }) => {
+export const Loginroute = ({ children, ...rest }) => {
   const auth = useAuth();
   return (
     <Route

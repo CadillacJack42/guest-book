@@ -33,6 +33,7 @@ export const Login = () => {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
         ></input>
         <input
           type="password"
@@ -40,6 +41,7 @@ export const Login = () => {
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
         ></input>
         <button type="submit" aria-label="Sign In">
           Sign In
