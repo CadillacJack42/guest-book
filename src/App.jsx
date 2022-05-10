@@ -1,7 +1,7 @@
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import { ProvideAuth } from './context/ProvideAuth';
 import { GuestBook } from './views/GuestBook';
-import { AuthRoute } from './utils/AuthRoute';
+import { Loginroute } from './utils/AuthRoute';
 import { Login } from './views/Login';
 
 export default function App() {
@@ -13,9 +13,9 @@ export default function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <AuthRoute exact path="/">
+            <Loginroute exact path="/">
               <GuestBook />
-            </AuthRoute>
+            </Loginroute>
           </Switch>
         </Router>
       </ProvideAuth>
