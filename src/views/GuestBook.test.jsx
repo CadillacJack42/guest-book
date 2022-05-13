@@ -26,7 +26,7 @@ describe('Should create new entry with user input', () => {
 
     userEvent.type(entry, 'This test post is amazing');
 
-    const addEntry = screen.getByRole('button');
+    const addEntry = await screen.findByRole('button', { name: 'Add Entry' });
     userEvent.click(addEntry);
 
     waitFor(() => {
