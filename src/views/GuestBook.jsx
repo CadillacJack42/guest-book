@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { EntryList } from '../components/EntryList';
 import { useAuth } from '../hooks/useAuth';
 import { getEntries, insertEntry } from '../utils/fetch-utils';
@@ -25,6 +25,7 @@ export const GuestBook = () => {
   return (
     <>
       <h3>Welcome {auth.user.email}</h3>
+      <button onClick={() => auth.logOut()}>Log Out</button>
       <form onSubmit={handleSubmit}>
         <label htmlFor="comment">Add Entry</label>
         <input
