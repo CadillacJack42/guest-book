@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { EntryList } from '../components/EntryList';
 import { useAuth } from '../hooks/useAuth';
 import { getEntries, insertEntry } from '../utils/fetch-utils';
 
@@ -15,10 +16,6 @@ export const GuestBook = () => {
 
   const handleChange = (e) => {
     setNewEntry(e.target.value);
-  };
-  const parseDate = (timestamp) => {
-    const date = new Date(timestamp);
-    return date.toDateString();
   };
 
   useEffect(() => {
@@ -39,14 +36,7 @@ export const GuestBook = () => {
         <button>Add Entry</button>
       </form>
       {entries.map((entry) => {
-        return (
-          <div key={entry.id}>
-            <p>{entry.content}</p>
-            <p>
-              Created at: {parseDate(entry.created_at)} By: {auth.user.email}
-            </p>
-          </div>
-        );
+        return <EntryList key={entry.id} entry={entry} />;
       })}
     </>
   );
